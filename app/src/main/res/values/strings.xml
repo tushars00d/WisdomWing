@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">WisdomWing</string>
+
+    <string name="image_contentDescription">image</string>
+    <string name="let_s_get_started_text">Let\'s Get started</string>
+    <string name="intro_text_description">Unlock College Wisdom with Wisdom Wing: Connect with Seniors and Alumni for Guidance.</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="sign_up">SIGN UP</string>
+
+    <!--START-->
+    <string name="sign_up_description_text">Enter your Name, College Id and Password, to register with us.</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <!--END-->
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "477039816522",
+    "project_id": "wisdomwing-b8ae8",
+    "storage_bucket": "wisdomwing-b8ae8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477039816522:android:f58dee5fe0a3121620dbb3",
+        "android_client_info": {
+          "package_name": "com.example.wisdomwing"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEX9YcF1OgWqt-1gd7ZP61UMIAfCrhXL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

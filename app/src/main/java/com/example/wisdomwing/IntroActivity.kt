@@ -26,25 +26,27 @@ class IntroActivity : AppCompatActivity() {
 
 
         // Add a click event for the Sign Up button
-        val btn_sign_up_intro : Button = findViewById(R.id.btn_sign_up_intro)
+        val btn_sign_up_intro: Button = findViewById(R.id.btn_sign_up_intro)
         btn_sign_up_intro.setOnClickListener {
             // Launch the Sign Up screen
             startActivity(Intent(this@IntroActivity, SignUpActivity::class.java))
         }
 
-        val btn_sign_in_intro : Button = findViewById(R.id.btn_sign_in_intro)
+        val btn_sign_in_intro: Button = findViewById(R.id.btn_sign_in_intro)
         btn_sign_in_intro.setOnClickListener {
             // Launch the Sign Up screen
             startActivity(Intent(this@IntroActivity, SignInActivity::class.java))
         }
 
     }
+
     public override fun onStart() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            //move to home feed
+            val intent = Intent(this, HomeFeedActivity::class.java)
+            startActivity(intent)
         }
     }
 }

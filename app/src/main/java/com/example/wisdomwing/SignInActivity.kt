@@ -6,18 +6,23 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.trimmedLength
+import com.example.wisdomwing.databinding.ActivitySignInBinding
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 
 
 class SignInActivity : AppCompatActivity() {
-    /**
-     * This function is auto created by Android when the Activity Class is created.
-     */
+
+    private lateinit var binding: ActivitySignInBinding
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        // This call the parent constructor
         super.onCreate(savedInstanceState)
-        // This is used to align the XML view to this class
-        setContentView(R.layout.activity_sign_in)
+        binding = ActivitySignInBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        // Initialize Firebase Auth
+        auth = Firebase.auth
 
         // This is used to hide the status bar and make the splash screen a full-screen activity.
         window.setFlags(
@@ -27,14 +32,29 @@ class SignInActivity : AppCompatActivity() {
 
         setupActionBar()
 
-//        btn_sign_in.setOnClickListener {
-//            signInRegisteredUser()
-//        }
+        binding.btnSignIn.setOnClickListener {
+            if (binding.etEmail.text!!.isNotEmpty() && binding.etPassword.text!!.isNotEmpty()) {
+                signIn(binding.etEmail.text.toString(), binding.etPassword.text.toString())
+            }
+        }
+
     }
 
-    /**
-     * A function for actionBar Setup.
-     */
+    private fun signIn(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "Logged In Successfully", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(
+                        baseContext,
+                        "Authentication failed.",
+                        Toast.LENGTH_SHORT,
+                    ).show()
+                }
+            }
+    }
+
     private fun setupActionBar() {
         val toolbar_sign_in_activity = supportActionBar
         toolbar_sign_in_activity?.setDisplayHomeAsUpEnabled(true)

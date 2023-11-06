@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFeedActivity">
+    tools:context=".HomeFeed">
 
     <!-- Questions List -->
     <androidx.recyclerview.widget.RecyclerView
@@ -23,32 +22,41 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
+        android:background="?android:attr/windowBackground"
         android:gravity="center"
-        android:background="?android:attr/windowBackground">
+        android:orientation="horizontal">
 
         <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Home"
             android:id="@+id/btnHome"
-            android:drawableTop="@drawable/ic_home" />
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Home"
+            tools:ignore="VisualLintButtonSize">
+
+        </Button>
 
         <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Ask Doubt"
             android:id="@+id/btnAskDoubt"
-            android:drawableTop="@drawable/ic_ask_doubt" />
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ask Doubt"
+            tools:ignore="VisualLintButtonSize">
+
+        </Button>
 
         <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Dashboard"
             android:id="@+id/btnDashboard"
-            android:drawableTop="@drawable/ic_dashboard" />
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Dashboard"
+            tools:ignore="VisualLintButtonSize">
+
+        </Button>
     </LinearLayout>
 </RelativeLayout>

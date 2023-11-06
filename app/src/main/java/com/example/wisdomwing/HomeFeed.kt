@@ -1,14 +1,19 @@
+package com.example.wisdomwing
+
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
+import com.google.firebase.database.DatabaseError
 
 class HomeFeedActivity : AppCompatActivity() {
 
+
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: QuestionsAdapter
+//    private lateinit var adapter: QuestionsAdapter
     private lateinit var database: FirebaseDatabase
     private lateinit var questionsReference: DatabaseReference
 
@@ -17,30 +22,30 @@ class HomeFeedActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home_feed)
 
         // Initialize Firebase
-        database = FirebaseDatabase.getInstance()
-        questionsReference = database.reference.child("questions")
+//        database = FirebaseDatabase.getInstance()
+//        questionsReference = database.reference.child("questions")
 
         // Initialize RecyclerView
-        recyclerView = findViewById(R.id.recyclerViewQuestions)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = QuestionsAdapter()
-        recyclerView.adapter = adapter
+//        recyclerView = findViewById(R.id.recyclerViewQuestions)
+//        recyclerView.layoutManager = LinearLayoutManager(this)
+//        adapter = QuestionsAdapter()
+//        recyclerView.adapter = adapter
 
         // Set up Firebase ValueEventListener to retrieve questions
-        questionsReference.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val questions = mutableListOf<Question>()
-                for (questionSnapshot in dataSnapshot.children) {
-                    val question = questionSnapshot.getValue(Question::class.java)
-                    questions.add(question!!)
-                }
-                adapter.updateQuestions(questions)
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-                // Handle any errors
-            }
-        })
+//        questionsReference.addValueEventListener(object : ValueEventListener {
+//            override fun onDataChange(dataSnapshot: DataSnapshot) {
+//                val questions = mutableListOf<Question>()
+//                for (questionSnapshot in dataSnapshot.children) {
+//                    val question = questionSnapshot.getValue(Question::class.java)
+//                    questions.add(question!!)
+//                }
+//                adapter.updateQuestions(questions)
+//            }
+//
+//            override fun onCancelled(databaseError: DatabaseError) {
+//                // Handle any errors
+//            }
+//        })
 
         // Set click listeners for navigation buttons
         val btnHome = findViewById<Button>(R.id.btnHome)

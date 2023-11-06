@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFeedActivity">
+
+    <!-- Questions List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewQuestions"
+        android:layout_width="match_parent"
+        android:layout_height="683dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="48dp"
+        android:padding="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottomNavigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="?android:attr/windowBackground">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:id="@+id/btnHome"
+            android:drawableTop="@drawable/ic_home" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Ask Doubt"
+            android:id="@+id/btnAskDoubt"
+            android:drawableTop="@drawable/ic_ask_doubt" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Dashboard"
+            android:id="@+id/btnDashboard"
+            android:drawableTop="@drawable/ic_dashboard" />
+    </LinearLayout>
+</RelativeLayout>

@@ -13,10 +13,21 @@
         android:theme="@style/Theme.WisdomWing"
         tools:targetApi="31">
         <activity
+            android:name=".UserDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".PostQuestion"
+            android:exported="false" />
+        <activity
+            android:name=".HomeFeed"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity
             android:name=".SignInActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Design.Light.NoActionBar"/>
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".SignUpActivity"
             android:exported="false"

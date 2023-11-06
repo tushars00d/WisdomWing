@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/editTextDoubtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:hint="Enter your doubt title"
+        android:inputType="text"
+        android:padding="16dp" />
+
+    <EditText
+        android:id="@+id/editTextDoubtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:hint="Describe your doubt"
+        android:inputType="textMultiLine"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/buttonPostDoubt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="16dp"
+        android:text="Post Doubt" />
+
+</LinearLayout>

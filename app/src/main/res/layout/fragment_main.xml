@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cream"
+    tools:context=".screens.main.MainFragment">
+
+    <FrameLayout
+        android:id="@+id/bottom_nav_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/retro_bottom_nav"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/bottom_nav_separation"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/separation_grey"
+        app:layout_constraintBottom_toTopOf="@id/retro_bottom_nav" />
+
+    <com.doubtless.doubtless.screens.main.bottomNav.BottomNavLayout
+        android:id="@+id/retro_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.doubtless.doubtless.theming.bottomNav.SoberBottomNavElementLayout
+            android:id="@+id/btm_nav_home"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/home_checkable_icon"
+            android:button="@null"
+            android:checked="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.doubtless.doubtless.theming.bottomNav.SoberBottomNavElementLayout
+            android:id="@+id/btm_nav_create"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/create_checkable_icon"
+            android:button="@null"
+            android:checked="false"
+            app:layout_constraintEnd_toStartOf="@id/btm_nav_notif"
+            app:layout_constraintStart_toEndOf="@id/btm_nav_home" />
+
+        <com.doubtless.doubtless.theming.bottomNav.SoberBottomNavElementLayout
+            android:id="@+id/btm_nav_notif"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/notif_checkable_icon"
+            android:button="@null"
+            android:checked="false"
+            app:layout_constraintEnd_toStartOf="@id/btm_nav_dashboard"
+            app:layout_constraintStart_toEndOf="@id/btm_nav_create" />
+
+        <com.doubtless.doubtless.theming.bottomNav.SoberBottomNavElementLayout
+            android:id="@+id/btm_nav_dashboard"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/dashboard_checkable_icon"
+            android:button="@null"
+            android:checked="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btm_nav_notif" />
+
+    </com.doubtless.doubtless.screens.main.bottomNav.BottomNavLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
